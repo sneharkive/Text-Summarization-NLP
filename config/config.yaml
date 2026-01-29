@@ -30,12 +30,26 @@ data_validation:
 #  model_ckpt: google/pegasus-cnn_dailymail
 
 
+
+#
+#model_evaluation:
+#  root_dir: artifacts/model_evaluation
+##  data_path: artifacts/data_transformation/samsum_dataset
+#  data_path: artifacts/data_ingestion/samsum_dataset
+#  model_path: artifacts/model_trainer/pegasus-samsum-model
+#  tokenizer_path: artifacts/model_trainer/tokenizer
+#  metric_file_name: artifacts/model_evaluation/metrics.csv
+
+
+
 # to deploy on render to fit in 512MB
 
 data_transformation:
   root_dir: artifacts/data_transformation
   data_path: artifacts/data_ingestion/samsum_dataset
   tokenizer_name: t5-small # Changed from pegasus
+
+
 
 model_trainer:
   root_dir: artifacts/model_trainer
@@ -46,8 +60,8 @@ model_trainer:
 
 model_evaluation:
   root_dir: artifacts/model_evaluation
-#  data_path: artifacts/data_transformation/samsum_dataset
   data_path: artifacts/data_ingestion/samsum_dataset
-  model_path: artifacts/model_trainer/pegasus-samsum-model
-  tokenizer_path: artifacts/model_trainer/tokenizer
+  # Point these to Hugging Face IDs, NOT local paths
+  model_path: t5-small
+  tokenizer_path: t5-small
   metric_file_name: artifacts/model_evaluation/metrics.csv
