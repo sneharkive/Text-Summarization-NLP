@@ -45,7 +45,7 @@
 
 
 from textSummarizer.config.configuration import ConfigurationManager
-from transformers import AutoTokenizer, PegasusForConditionalGeneration
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 import torch
 
 
