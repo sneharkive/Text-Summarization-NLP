@@ -55,8 +55,8 @@ class PredictionPipeline:
 
     def predict(self, text: str):
         # Remove the "summarize: " prefix for BART-based tiny models
+        # inputs = self.tokenizer(text, return_tensors="pt", truncation=True, padding="longest")
         inputs = self.tokenizer(text, return_tensors="pt", truncation=True, padding="longest")
-
         summary_ids = self.model.generate(
             inputs["input_ids"],
             num_beams=4,

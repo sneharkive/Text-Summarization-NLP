@@ -61,7 +61,7 @@ model_trainer:
 model_evaluation:
   root_dir: artifacts/model_evaluation
   data_path: artifacts/data_ingestion/samsum_dataset
-  # Switch to a "Tiny" model to prevent Out of Memory (OOM) crashes
-  model_path: moussaKam/bart-tiny-cnn
-  tokenizer_path: moussaKam/bart-tiny-cnn
+  # Use this extremely small model for testing on Render Free Tier
+  model_path: sshleifer/tiny-mbart
+  tokenizer_path: sshleifer/tiny-mbart
   metric_file_name: artifacts/model_evaluation/metrics.csv
