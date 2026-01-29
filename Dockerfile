@@ -4,10 +4,10 @@ RUN apt-get update -y && apt-get install -y gcc g++
 
 WORKDIR /app
 
-# 1. Copy everything first so setup.py and src/ are available
+# Copy all files (including setup.py and src/) first
 COPY . /app
 
-# 2. Now install requirements (including the -e . local package)
+# Install requirements (this will now find setup.py for the '-e .' line)
 RUN pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 8080
