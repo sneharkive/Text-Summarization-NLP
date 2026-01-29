@@ -61,7 +61,7 @@ model_trainer:
 model_evaluation:
   root_dir: artifacts/model_evaluation
   data_path: artifacts/data_ingestion/samsum_dataset
-  # Point these to Hugging Face IDs, NOT local paths
-  model_path: t5-small
-  tokenizer_path: t5-small
+  # Switch to a "Tiny" model to prevent Out of Memory (OOM) crashes
+  model_path: moussaKam/bart-tiny-cnn
+  tokenizer_path: moussaKam/bart-tiny-cnn
   metric_file_name: artifacts/model_evaluation/metrics.csv
