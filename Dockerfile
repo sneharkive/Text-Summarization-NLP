@@ -1,21 +1,15 @@
-# Use a more recent, supported base image
 FROM python:3.8-slim-bullseye
 
-# Update system and install essential build tools
 RUN apt-get update -y && apt-get install -y gcc g++
 
-# Set the working directory in the container
 WORKDIR /app
 
-# Copy the requirements file and install dependencies
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Copy the rest of the application code
+# 1. Copy everything first so setup.py and src/ are available
 COPY . /app
 
-# Expose the port FastAPI runs on
+# 2. Now install requirements (including the -e . local package)
+RUN pip install --no-cache-dir -r requirements.txt
+
 EXPOSE 8080
 
-# Use the environment variable for the port (critical for Render)
 CMD ["sh", "-c", "uvicorn app:app --host 0.0.0.0 --port ${PORT:-8080}"]
