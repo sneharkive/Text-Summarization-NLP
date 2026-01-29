@@ -53,9 +53,10 @@ class PredictionPipeline:
     def __init__(self):
         self.config = ConfigurationManager().get_model_evaluation_config()
         self.tokenizer = AutoTokenizer.from_pretrained(self.config.tokenizer_path)
-        self.model = PegasusForConditionalGeneration.from_pretrained(
-            self.config.model_path
-        )
+        # self.model = PegasusForConditionalGeneration.from_pretrained(
+        #     self.config.model_path
+        # )
+        self.model = AutoModelForSeq2SeqLM.from_pretrained(self.config.model_path)
 
     def predict(self, text: str):
         print("Dialogue:")
