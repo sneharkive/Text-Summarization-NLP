@@ -45,6 +45,11 @@ pip install -r requirements.txt
 python app.py
 ```
 
+# I update the app.py a bit so new command is
+```bash
+uvicorn app:app --reload
+```
+
 Now,
 ```bash
 open up you local host and port
@@ -53,7 +58,6 @@ open up you local host and port
 
 ```bash
 Author: Sneha Roy
-Data Scientist
 Email: sneharoy90737@gmail.com
 
 ```
