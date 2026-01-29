@@ -1,5 +1,5 @@
-# Use an official lightweight Python image
-FROM python:3.8-slim-buster
+# Use a more recent, supported base image
+FROM python:3.8-slim-bullseye
 
 # Update system and install essential build tools
 RUN apt-get update -y && apt-get install -y gcc g++
@@ -17,5 +17,5 @@ COPY . /app
 # Expose the port FastAPI runs on
 EXPOSE 8080
 
-# Command to run the application using uvicorn
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8080"]
+# Use the environment variable for the port (critical for Render)
+CMD ["sh", "-c", "uvicorn app:app --host 0.0.0.0 --port ${PORT:-8080}"]
