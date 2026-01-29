@@ -1,3 +1,6 @@
+# Dataset Link
+https://github.com/sneharkive/Text-Summarization-NLP/raw/refs/heads/main/SAMSum.zip
+
 # End to end Text-Summarizer-Project
 
 ## Workflows
@@ -6,9 +9,9 @@
 2. Update params.yaml
 3. Update entity
 4. Update the configuration manager in src config
-5. update the conponents
+5. update the components
 6. update the pipeline
-7. update the main.py
+7. update the main.py 
 8. update the app.py
 
 
@@ -18,7 +21,7 @@
 Clone the repository
 
 ```bash
-https://github.com/entbappy/End-to-end-Text-Summarization
+https://github.com/sneharkive/Text-Summarization-NLP
 ```
 ### STEP 01- Create a conda environment after opening the repository
 
@@ -49,9 +52,9 @@ open up you local host and port
 
 
 ```bash
-Author: Krish Naik
+Author: Sneha Roy
 Data Scientist
-Email: krishnaik06@gmail.com
+Email: sneharoy90737@gmail.com
 
 ```
 
@@ -118,7 +121,7 @@ Email: krishnaik06@gmail.com
     setting>actions>runner>new self hosted runner> choose os> then run command one by one
 
 
-# 7. Setup github secrets:
+# 7. Setup GitHub secrets:
 
     AWS_ACCESS_KEY_ID=
 
